@@ -7,17 +7,14 @@ import javax.swing.border.*;
 
 /**
  * Displays a picture and lets you explore the picture by displaying the row,
- * column, red,
- * green, and blue values of the pixel at the cursor when you click a mouse
- * button or
- * press and hold a mouse button while moving the cursor. It also lets you zoom
- * in or
- * out. You can also type in a row and column value to see the color at that
- * location.
+ * column, red, green, and blue values of the pixel at the cursor when you click
+ * a mouse button or press and hold a mouse button while moving the cursor. It
+ * also lets you zoom in or out. You can also type in a row and column value to
+ * see the color at that location.
  *
- * Originally created for the Jython Environment for Students (JES).
- * Modified to work with DrJava by Barbara Ericson
- * Also modified to show row and columns by Barbara Ericson
+ * Originally created for the Jython Environment for Students (JES). Modified to
+ * work with DrJava by Barbara Ericson Also modified to show row and columns by
+ * Barbara Ericson
  *
  * @author Keith McDermottt, gte047w@cc.gatech.edu
  * @author Barb Ericson ericson@cc.gatech.edu
@@ -281,15 +278,13 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     }
 
     /**
-     * Method to set up the next and previous buttons for the
-     * pixel location information
+     * Method to set up the next and previous buttons for the pixel location
+     * information
      */
     private void setUpNextAndPreviousButtons() {
         // create the image icons for the buttons
-        Icon prevIcon = new ImageIcon(DigitalPicture.class.getResource("leftArrow.gif"),
-                "previous index");
-        Icon nextIcon = new ImageIcon(DigitalPicture.class.getResource("rightArrow.gif"),
-                "next index");
+        Icon prevIcon = new ImageIcon(DigitalPicture.class.getResource("leftArrow.gif"), "previous index");
+        Icon nextIcon = new ImageIcon(DigitalPicture.class.getResource("rightArrow.gif"), "next index");
         // create the arrow buttons
         colPrevButton = new JButton(prevIcon);
         colNextButton = new JButton(nextIcon);
@@ -461,8 +456,8 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     }
 
     /**
-     * Creates the North JPanel with all the pixel location
-     * and color information
+     * Creates the North JPanel with all the pixel location and color
+     * information
      */
     private void createInfoPanel() {
         // create the info panel and set the layout
@@ -536,8 +531,8 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     }
 
     /**
-     * Zooms in the on picture by scaling the image.
-     * It is extremely memory intensive.
+     * Zooms in the on picture by scaling the image. It is extremely memory
+     * intensive.
      *
      * @param factor the amount to zoom by
      */
@@ -582,8 +577,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
      *
      * @param column the horizontal value
      * @param row the vertical value
-     * @return true if the row and column are in the picture
-     * and false otherwise
+     * @return true if the row and column are in the picture and false otherwise
      */
     private boolean isLocationInPicture(int column, int row) {
         boolean result = false; // the default is false
@@ -596,8 +590,8 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     }
 
     /**
-     * Method to display the pixel information from the passed x and y but
-     * also converts x and y from strings
+     * Method to display the pixel information from the passed x and y but also
+     * converts x and y from strings
      *
      * @param xString the x value as a string from the user
      * @param yString the y value as a string from the user
@@ -672,8 +666,8 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     }
 
     /**
-     * Method to clear the labels and current color and reset the
-     * current index to -1
+     * Method to clear the labels and current color and reset the current index
+     * to -1
      */
     private void clearInformation() {
         colValue.setText("N/A");

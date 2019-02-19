@@ -41,10 +41,10 @@ public class PictureTester {
     }
 
     public static void testFixUnderwater() {
-        Picture oil = new Picture("water.jpg");
-        oil.explore();
-        oil.fixUnderwater();
-        oil.explore();
+        Picture water = new Picture("water.jpg");
+        water.explore();
+        water.fixUnderwater();
+        water.explore();
     }
 
     /**
@@ -86,8 +86,7 @@ public class PictureTester {
     }
 
     /**
-     * Main method for testing. Every class can have a main
-     * method in Java
+     * Main method for testing. Every class can have a main method in Java
      */
     public static void main(String[] args) {
         // uncomment a call here to run a test

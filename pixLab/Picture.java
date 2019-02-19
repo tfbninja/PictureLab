@@ -8,9 +8,8 @@ import java.util.*;
 import java.util.List; // resolves problem with java.awt.List and java.util.List
 
 /**
- * A class that represents a picture. This class inherits from
- * SimplePicture and allows the student to add functionality to
- * the Picture class.
+ * A class that represents a picture. This class inherits from SimplePicture and
+ * allows the student to add functionality to the Picture class.
  *
  * @author Barbara Ericson ericson@cc.gatech.edu
  */
@@ -49,8 +48,7 @@ public class Picture extends SimplePicture {
     }
 
     /**
-     * Constructor that takes a picture and creates a
-     * copy of that picture
+     * Constructor that takes a picture and creates a copy of that picture
      *
      * @param copyPicture the picture to copy
      */
@@ -147,19 +145,19 @@ public class Picture extends SimplePicture {
                 int r = pixelObj.getRed();
                 int g = pixelObj.getGreen();
                 int b = pixelObj.getBlue();
-                if (r <= 20 && b > 150) {
-                    pixelObj.setRed(0);
-                    pixelObj.setGreen(0);
-                    pixelObj.setBlue(0);
+                if ((r <= 20 && g >= 150 && g <= 170 && b > 150) || ((Math.abs(148 - b) <= 2) && ((r >= 23 && r <= 27 || r < 20) && r != 24) && Math.abs(160 - g) < 5)) {
+                    g -= 75;
+                    pixelObj.setRed(r);
+                    pixelObj.setGreen(g);
+                    pixelObj.setBlue(b);
                 }
             }
         }
     }
 
     /**
-     * Method that mirrors the picture around a
-     * vertical mirror in the center of the picture
-     * from left to right
+     * Method that mirrors the picture around a vertical mirror in the center of
+     * the picture from left to right
      */
     public void mirrorVertical() {
         Pixel[][] pixels = this.getPixels2D();
@@ -198,9 +196,8 @@ public class Picture extends SimplePicture {
     }
 
     /**
-     * copy from the passed fromPic to the
-     * specified startRow and startCol in the
-     * current picture
+     * copy from the passed fromPic to the specified startRow and startCol in
+     * the current picture
      *
      * @param fromPic the picture to copy from
      * @param startRow the start row to copy to
