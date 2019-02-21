@@ -135,6 +135,29 @@ public class Picture extends SimplePicture {
         }
     }
 
+    public void processImage() {
+        grayscale();
+        Pixel[][] pixels = this.getPixels2D();
+        int[][] grays = new int[pixels.length][pixels[0].length];
+        int r1 = 0;
+        for (Pixel[] pL : pixels) {
+            int c1 = 0;
+            for (Pixel p : pL) {
+                grays[r1][c1] = p.getRed();
+                c1++;
+            }
+            r1++;
+        }
+        for (int r = 0; r < grays.length - 2; r++) {
+            for (int c = 0; c < grays[r].length - 2; c++) {
+                grays[r][c] = Math.max(0, grays[r][c] - grays[r + 2][c + 2]);
+                pixels[r][c].setRed(grays[r][c]);
+                pixels[r][c].setGreen(grays[r][c]);
+                pixels[r][c].setBlue(grays[r][c]);
+            }
+        }
+    }
+
     /**
      * Method to highlight underwater fish in water.jpg
      */

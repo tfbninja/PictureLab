@@ -19,6 +19,13 @@ public class PictureTester {
         beach.explore();
     }
 
+    public static void testProcess() {
+        Picture beach = new Picture("Oil.jpg");
+        beach.explore();
+        beach.processImage();
+        beach.explore();
+    }
+
     public static void testKeepOnlyBlue() {
         Picture oil = new Picture("Oil.jpg");
         oil.explore();
@@ -97,8 +104,9 @@ public class PictureTester {
         //testKeepOnlyRed();
         //testKeepOnlyGreen();
         //testNegate();
-        //testGrayscale();
-        testFixUnderwater();
+        testGrayscale();
+        //testFixUnderwater();
+        testProcess();
         //testMirrorVertical();
         //testMirrorTemple();
         //testMirrorArms();
