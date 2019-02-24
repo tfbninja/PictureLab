@@ -547,8 +547,8 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
         // set the scroll image icon to the new image
         imageDisplay.setImage(bimg.getScaledInstance(width, height, Image.SCALE_DEFAULT));
-        imageDisplay.setCurrentX((int) (colIndex * zoomFactor));
-        imageDisplay.setCurrentY((int) (rowIndex * zoomFactor));
+        imageDisplay.setCurrentX((int) (colIndex * zoomFactor), null);
+        imageDisplay.setCurrentY((int) (rowIndex * zoomFactor), null);
         imageDisplay.revalidate();
         checkScroll();  // check if need to reposition scroll
     }
@@ -620,13 +620,14 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
      */
     private void displayPixelInformation(int pictureX, int pictureY) {
         // check that this x and y are in range
+        Pixel pixel = null;
         if (isLocationInPicture(pictureX, pictureY)) {
             // save the current x and y index
             colIndex = pictureX;
             rowIndex = pictureY;
 
             // get the pixel at the x and y
-            Pixel pixel = new Pixel(picture, colIndex, rowIndex);
+            pixel = new Pixel(picture, colIndex, rowIndex);
 
             // set the values based on the pixel
             colValue.setText(Integer.toString(colIndex + numberBase));
@@ -641,8 +642,8 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
         }
 
         // notify the image display of the current x and y
-        imageDisplay.setCurrentX((int) (colIndex * zoomFactor));
-        imageDisplay.setCurrentY((int) (rowIndex * zoomFactor));
+        imageDisplay.setCurrentX((int) (colIndex * zoomFactor), pixel);
+        imageDisplay.setCurrentY((int) (rowIndex * zoomFactor), pixel);
     }
 
     /**

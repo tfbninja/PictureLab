@@ -13,10 +13,10 @@ public class PictureTester {
      * Method to test zeroBlue
      */
     public static void testZeroBlue() {
-        Picture beach = new Picture("water.jpg");
-        beach.explore();
-        beach.zeroBlue();
-        beach.explore();
+        Picture oil = new Picture("Oil.jpg");
+        oil.explore();
+        oil.zeroBlue();
+        oil.explore();
     }
 
     public static void testProcess() {
@@ -28,8 +28,19 @@ public class PictureTester {
 
     public static void testKeepOnlyBlue() {
         Picture oil = new Picture("Oil.jpg");
-        oil.explore();
         oil.keepOnlyBlue();
+        oil.explore();
+    }
+
+    public static void testKeepOnlyRed() {
+        Picture oil = new Picture("Oil.jpg");
+        oil.keepOnlyRed();
+        oil.explore();
+    }
+
+    public static void testKeepOnlyGreen() {
+        Picture oil = new Picture("Oil.jpg");
+        oil.keepOnlyGreen();
         oil.explore();
     }
 
@@ -65,6 +76,16 @@ public class PictureTester {
     }
 
     /**
+     * Method to test mirrorVertical
+     */
+    public static void testMirrorVerticalRightToLeft() {
+        Picture caterpillar = new Picture("caterpillar.jpg");
+        caterpillar.explore();
+        caterpillar.mirrorVerticalRightToLeft();
+        caterpillar.explore();
+    }
+
+    /**
      * Method to test mirrorTemple
      */
     public static void testMirrorTemple() {
@@ -72,6 +93,56 @@ public class PictureTester {
         temple.explore();
         temple.mirrorTemple();
         temple.explore();
+    }
+
+    /**
+     * Method to test mirrorArms
+     */
+    public static void testMirrorArms() {
+        Picture snowman = new Picture("snowman.jpg");
+        snowman.explore();
+        snowman.mirrorArms();
+        snowman.explore();
+    }
+
+    /**
+     * Method to test mirrorHorizontal
+     */
+    public static void testMirrorHorizontal() {
+        Picture red = new Picture("redMotorcycle.jpg");
+        red.explore();
+        red.mirrorHorizontal();
+        red.explore();
+    }
+
+    /**
+     * Method to test mirrorHorizontalBotToTop
+     */
+    public static void testMirrorHorizontalBotToTop() {
+        Picture red = new Picture("redMotorcycle.jpg");
+        red.explore();
+        red.mirrorHorizontalBotToTop();
+        red.explore();
+    }
+
+    /**
+     * Method to test mirrorDiagonal
+     */
+    public static void testMirrorDiagonal() {
+        Picture blue = new Picture("blueMotorcycle.jpg");
+        blue.explore();
+        blue.mirrorDiagonal();
+        blue.explore();
+    }
+
+    /**
+     * Method to test trueMirrorDiagonal
+     */
+    public static void testTrueMirrorDiagonal() {
+        Picture blue = new Picture("blueMotorcycle.jpg");
+        blue.explore();
+        blue.trueMirrorDiagonal();
+        blue.explore();
     }
 
     /**
@@ -104,14 +175,18 @@ public class PictureTester {
         //testKeepOnlyRed();
         //testKeepOnlyGreen();
         //testNegate();
-        testGrayscale();
+        //testGrayscale();
         //testFixUnderwater();
-        testProcess();
+        //testProcess();
         //testMirrorVertical();
+        //testMirrorVerticalRightToLeft();
+        //testMirrorHorizontal();
+        //testMirrorHorizontalBotToTop();
         //testMirrorTemple();
-        //testMirrorArms();
+        testMirrorArms();
         //testMirrorGull();
         //testMirrorDiagonal();
+        //testTrueMirrorDiagonal();
         //testCollage();
         //testCopy();
         //testEdgeDetection();
