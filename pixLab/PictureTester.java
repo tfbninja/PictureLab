@@ -106,6 +106,16 @@ public class PictureTester {
     }
 
     /**
+     * Method to test mirrorGull
+     */
+    public static void testMirrorGull() {
+        Picture seagull = new Picture("seagull.jpg");
+        seagull.explore();
+        seagull.mirrorGull();
+        seagull.explore();
+    }
+
+    /**
      * Method to test mirrorHorizontal
      */
     public static void testMirrorHorizontal() {
@@ -183,8 +193,8 @@ public class PictureTester {
         //testMirrorHorizontal();
         //testMirrorHorizontalBotToTop();
         //testMirrorTemple();
-        testMirrorArms();
-        //testMirrorGull();
+        //testMirrorArms();
+        testMirrorGull();
         //testMirrorDiagonal();
         //testTrueMirrorDiagonal();
         //testCollage();
