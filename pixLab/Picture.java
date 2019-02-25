@@ -197,6 +197,7 @@ public class Picture extends SimplePicture {
                 if ((r <= 20 && g >= 150 && g <= 170 && b > 150) || ((Math.abs(148 - b) <= 2) && ((r >= 23 && r <= 27 || r < 20) && r != 24) && Math.abs(160 - g) < 5)) {
                     g -= 75;
                     r += 75;
+                    b -= 100;
                     pixelObj.setRed(r);
                     pixelObj.setGreen(g);
                     pixelObj.setBlue(b);
@@ -464,6 +465,30 @@ public class Picture extends SimplePicture {
                     leftPixel.setColor(Color.BLACK);
                 } else {
                     leftPixel.setColor(Color.WHITE);
+                }
+            }
+        }
+    }
+
+    /**
+     * Method to show large changes in color
+     *
+     * @param edgeDist the distance for finding edges
+     */
+    public void edgeDetection2(int edgeDist) {
+        Pixel top = null;
+        Pixel bot = null;
+        Pixel[][] pixels = this.getPixels2D();
+        Color topC = null;
+        for (int row = 0; row < pixels.length - 1; row++) {
+            for (int col = 0; col < pixels[0].length; col++) {
+                top = pixels[row][col];
+                bot = pixels[row + 1][col];
+                topC = top.getColor();
+                if (bot.colorDistance(topC) > edgeDist) {
+                    top.setColor(Color.BLACK);
+                } else {
+                    top.setColor(Color.WHITE);
                 }
             }
         }

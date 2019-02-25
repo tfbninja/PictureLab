@@ -174,33 +174,40 @@ public class PictureTester {
     }
 
     /**
+     * Method to test edgeDetection2
+     */
+    public static void testEdgeDetection2() {
+        Picture swan = new Picture("swan.jpg");
+        swan.explore();
+        swan.edgeDetection2(10);
+        swan.explore();
+    }
+
+    /**
      * Main method for testing. Every class can have a main method in Java
      */
     public static void main(String[] args) {
-        // uncomment a call here to run a test
-        // and comment out the ones you don't want
-        // to run
-        //testZeroBlue();
-        //testKeepOnlyBlue();
-        //testKeepOnlyRed();
-        //testKeepOnlyGreen();
-        //testNegate();
-        //testGrayscale();
-        //testFixUnderwater();
-        //testProcess();
-        //testMirrorVertical();
-        //testMirrorVerticalRightToLeft();
-        //testMirrorHorizontal();
-        //testMirrorHorizontalBotToTop();
-        //testMirrorTemple();
-        //testMirrorArms();
+        testZeroBlue();
+        testKeepOnlyBlue();
+        testKeepOnlyRed();
+        testKeepOnlyGreen();
+        testNegate();
+        testGrayscale();
+        testFixUnderwater();
+        testProcess();
+        testMirrorVertical();
+        testMirrorVerticalRightToLeft();
+        testMirrorHorizontal();
+        testMirrorHorizontalBotToTop();
+        testMirrorTemple();
+        testMirrorArms();
         testMirrorGull();
-        //testMirrorDiagonal();
-        //testTrueMirrorDiagonal();
+        testMirrorDiagonal();
+        testTrueMirrorDiagonal();
         //testCollage();
         //testCopy();
-        //testEdgeDetection();
-        //testEdgeDetection2();
+        testEdgeDetection();
+        testEdgeDetection2();
         //testChromakey();
         //testEncodeAndDecode();
         //testGetCountRedOverValue(250);
